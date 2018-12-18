@@ -158,7 +158,7 @@ class UICircularProgressRingLayer: CAShapeLayer {
         UIGraphicsPushContext(ctx)
         // Draw the rings
         drawOuterRing()
-        drawInnerRing(in: ctx)
+//        drawInnerRing(in: ctx)
         // Draw the label
         drawValueLabel()
         // Call the delegate and notifiy of updated value
