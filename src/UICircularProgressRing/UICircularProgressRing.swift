@@ -211,37 +211,6 @@ open class UICircularProgressRing: UIView {
     // MARK: View Style
 
     /**
-     Variable for the style of the progress ring.
-     
-     Range: [1,5]
-     
-     The four styles are
-     
-     - 1: Radius of the inner ring is smaller (inner ring inside outer ring)
-     - 2: Radius of inner ring is equal to outer ring (both at same location)
-     - 3: Radius of inner ring is equal to outer ring, and the outer ring is dashed
-     - 4: Radius of inner ring is equal to outer ring, and the outer ring is dotted
-     - 5: Radius of inner ring is equal to outer ring, and inner ring has gradient
-     
-     ## Important ##
-     THIS IS ONLY TO BE USED WITH INTERFACE BUILDER
-     
-     The reason for this is IB has no support for enumerations as of yet
-     
-     
-     ## Author
-     Luis Padron
-     */
-    @available(*, unavailable,
-    message: "This property is reserved for Interface Builder, use 'ringStyle' instead")
-    open var ibRingStyle: Int = 1 {
-        willSet {
-            let style = UICircularProgressRingStyle(rawValue: newValue)
-            ringStyle = style ?? .inside
-        }
-    }
-
-    /**
      The style of the progress ring.
      
      Type: `UICircularProgressRingStyle`
@@ -551,39 +520,6 @@ open class UICircularProgressRing: UIView {
     }
 
     /**
-     The style for the outer ring end cap (how it is drawn on screen)
-     Range [1,3]
-     - 1: Line with a squared off end
-     - 2: Line with a rounded off end
-     - 3: Line with a square end
-     - <1 & >3: Defaults to style 1
-     
-     ## Important ##
-     THIS IS ONLY TO BE USED WITH INTERFACE BUILDER
-     
-     Default = 1
-     
-     ## Author
-     Luis Padron
-     */
-    @available(*, unavailable,
-    message: "This property is reserved for Interface Builder, use 'outerCapStyle' instead")
-    open var outerRingCapStyle: Int32 = 1 {
-        willSet {
-            switch newValue {
-            case 1:
-                outerCapStyle = .butt
-            case 2:
-                outerCapStyle = .round
-            case 3:
-                outerCapStyle = .square
-            default:
-                outerCapStyle = .butt
-            }
-        }
-    }
-
-    /**
      The style for the tip/cap of the outer ring
      
      Type: `CGLineCap`
@@ -648,41 +584,6 @@ open class UICircularProgressRing: UIView {
     open var innerRingSpacing: CGFloat = 1 {
         didSet {
             ringLayer.innerRingSpacing = innerRingSpacing
-        }
-    }
-
-    /**
-     The style for the inner ring end cap (how it is drawn on screen)
-     
-     Range [1,3]
-     
-     - 1: Line with a squared off end
-     - 2: Line with a rounded off end
-     - 3: Line with a square end
-     - <1 & >3: Defaults to style 2
-     
-     ## Important ##
-     THIS IS ONLY TO BE USED WITH INTERFACE BUILDER
-     
-     Default = 2
-     
-     ## Author
-     Luis Padron
-     */
-    @available(*, unavailable,
-    message: "This property is reserved for Interface Builder, use 'innerCapStyle' instead")
-    open var innerRingCapStyle: Int32 = 2 {
-        willSet {
-            switch newValue {
-            case 1:
-                innerCapStyle = .butt
-            case 2:
-                innerCapStyle = .round
-            case 3:
-                innerCapStyle = .square
-            default:
-                innerCapStyle = .round
-            }
         }
     }
 
