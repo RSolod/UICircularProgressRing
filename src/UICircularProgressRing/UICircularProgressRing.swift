@@ -65,7 +65,7 @@ fileprivate extension CALayer {
  Luis Padron
  
  */
-@IBDesignable open class UICircularProgressRing: UIView {
+open class UICircularProgressRing: UIView {
 
     // MARK: Delegate
     /**
@@ -100,7 +100,7 @@ fileprivate extension CALayer {
      Luis Padron
      
      */
-    @IBInspectable open var fullCircle: Bool = true {
+    open var fullCircle: Bool = true {
         didSet {
             ringLayer.fullCircle = fullCircle
         }
@@ -126,7 +126,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var value: ProgressValue = 0 {
+    open var value: ProgressValue = 0 {
         didSet {
             if value < minValue {
                 #if DEBUG
@@ -181,7 +181,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var minValue: ProgressValue = 0.0 {
+    open var minValue: ProgressValue = 0.0 {
         didSet {
             ringLayer.minValue = abs(minValue)
         }
@@ -202,7 +202,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var maxValue: ProgressValue = 100.0 {
+    open var maxValue: ProgressValue = 100.0 {
         didSet {
             ringLayer.maxValue = abs(maxValue)
         }
@@ -234,7 +234,7 @@ fileprivate extension CALayer {
      */
     @available(*, unavailable,
     message: "This property is reserved for Interface Builder, use 'ringStyle' instead")
-    @IBInspectable open var ibRingStyle: Int = 1 {
+    open var ibRingStyle: Int = 1 {
         willSet {
             let style = UICircularProgressRingStyle(rawValue: newValue)
             ringStyle = style ?? .inside
@@ -272,7 +272,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var showsValueKnob: Bool = false {
+    open var showsValueKnob: Bool = false {
         didSet {
             ringLayer.showsValueKnob = showsValueKnob
         }
@@ -287,7 +287,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var valueKnobSize: CGFloat = 15.0 {
+    open var valueKnobSize: CGFloat = 15.0 {
         didSet {
             ringLayer.valueKnobSize = valueKnobSize
         }
@@ -302,7 +302,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var valueKnobColor: UIColor = .lightGray {
+    open var valueKnobColor: UIColor = .lightGray {
         didSet {
             ringLayer.valueKnobColor = valueKnobColor
         }
@@ -317,7 +317,7 @@ fileprivate extension CALayer {
      ## Author
      Makan Houston
      */
-    @IBInspectable open var valueKnobShadowBlur: CGFloat = 2.0 {
+    open var valueKnobShadowBlur: CGFloat = 2.0 {
         didSet {
             ringLayer.valueKnobShadowBlur = valueKnobShadowBlur
         }
@@ -332,7 +332,7 @@ fileprivate extension CALayer {
      ## Author
      Makan Houston
      */
-    @IBInspectable open var valueKnobShadowOffset: CGSize = .zero {
+    open var valueKnobShadowOffset: CGSize = .zero {
         didSet {
             ringLayer.valueKnobShadowOffset = valueKnobShadowOffset
         }
@@ -347,7 +347,7 @@ fileprivate extension CALayer {
      ## Author
      Makan Houston
      */
-    @IBInspectable open var valueKnobShadowColor: UIColor = UIColor.black.withAlphaComponent(0.8) {
+    open var valueKnobShadowColor: UIColor = UIColor.black.withAlphaComponent(0.8) {
         didSet {
             ringLayer.valueKnobShadowColor = valueKnobShadowColor
         }
@@ -382,7 +382,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var startAngle: CGFloat = 0 {
+    open var startAngle: CGFloat = 0 {
         didSet {
             ringLayer.startAngle = startAngle
         }
@@ -402,7 +402,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var endAngle: CGFloat = 360 {
+    open var endAngle: CGFloat = 360 {
         didSet {
             ringLayer.endAngle = endAngle
         }
@@ -499,7 +499,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var outerRingWidth: CGFloat = 10.0 {
+    open var outerRingWidth: CGFloat = 10.0 {
         didSet {
             ringLayer.outerRingWidth = outerRingWidth
         }
@@ -514,7 +514,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var outerRingColor: UIColor = UIColor.gray {
+    open var outerRingColor: UIColor = UIColor.gray {
         didSet {
             ringLayer.outerRingColor = outerRingColor
         }
@@ -529,7 +529,7 @@ fileprivate extension CALayer {
      ## Author
      Abdulla Allaith
      */
-    @IBInspectable open var outerBorderColor: UIColor = UIColor.gray {
+    open var outerBorderColor: UIColor = UIColor.gray {
         didSet {
             ringLayer.outerBorderColor = outerBorderColor
         }
@@ -544,7 +544,7 @@ fileprivate extension CALayer {
      ## Author
      Abdulla Allaith
      */
-    @IBInspectable open var outerBorderWidth: CGFloat = 2 {
+    open var outerBorderWidth: CGFloat = 2 {
         didSet {
             ringLayer.outerBorderWidth = outerBorderWidth
         }
@@ -568,7 +568,7 @@ fileprivate extension CALayer {
      */
     @available(*, unavailable,
     message: "This property is reserved for Interface Builder, use 'outerCapStyle' instead")
-    @IBInspectable open var outerRingCapStyle: Int32 = 1 {
+    open var outerRingCapStyle: Int32 = 1 {
         willSet {
             switch newValue {
             case 1:
@@ -613,7 +613,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var innerRingWidth: CGFloat = 5.0 {
+    open var innerRingWidth: CGFloat = 5.0 {
         didSet {
             ringLayer.innerRingWidth = innerRingWidth
         }
@@ -628,7 +628,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var innerRingColor: UIColor = UIColor.blue {
+    open var innerRingColor: UIColor = UIColor.blue {
         didSet {
             ringLayer.innerRingColor = innerRingColor
         }
@@ -645,7 +645,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var innerRingSpacing: CGFloat = 1 {
+    open var innerRingSpacing: CGFloat = 1 {
         didSet {
             ringLayer.innerRingSpacing = innerRingSpacing
         }
@@ -671,7 +671,7 @@ fileprivate extension CALayer {
      */
     @available(*, unavailable,
     message: "This property is reserved for Interface Builder, use 'innerCapStyle' instead")
-    @IBInspectable open var innerRingCapStyle: Int32 = 2 {
+    open var innerRingCapStyle: Int32 = 2 {
         willSet {
             switch newValue {
             case 1:
@@ -715,7 +715,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var shouldShowValueText: Bool = true {
+    open var shouldShowValueText: Bool = true {
         didSet {
             ringLayer.shouldShowValueText = shouldShowValueText
         }
@@ -731,7 +731,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var fontColor: UIColor = UIColor.black {
+    open var fontColor: UIColor = UIColor.black {
         didSet {
             ringLayer.fontColor = fontColor
         }
@@ -750,7 +750,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var font: UIFont = UIFont.systemFont(ofSize: 18) {
+    open var font: UIFont = UIFont.systemFont(ofSize: 18) {
         didSet {
             ringLayer.font = font
         }
@@ -767,7 +767,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var valueIndicator: String = "%" {
+    open var valueIndicator: String = "%" {
         didSet {
             ringLayer.valueIndicator = valueIndicator
         }
@@ -783,7 +783,7 @@ fileprivate extension CALayer {
      ## Author
      Elad Hayun
      */
-    @IBInspectable open var rightToLeft: Bool = false {
+    open var rightToLeft: Bool = false {
         didSet {
             ringLayer.rightToLeft = rightToLeft
         }
@@ -801,7 +801,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var showFloatingPoint: Bool = false {
+    open var showFloatingPoint: Bool = false {
         didSet {
             ringLayer.showFloatingPoint = showFloatingPoint
         }
@@ -818,7 +818,7 @@ fileprivate extension CALayer {
      ## Author
      Luis Padron
      */
-    @IBInspectable open var decimalPlaces: Int = 2 {
+    open var decimalPlaces: Int = 2 {
         didSet {
             ringLayer.decimalPlaces = decimalPlaces
         }
@@ -864,7 +864,7 @@ fileprivate extension CALayer {
      ## Author
      Pete Walker
      */
-    @IBInspectable open var isClockwise: Bool = true {
+    open var isClockwise: Bool = true {
         didSet {
             ringLayer.isClockwise = isClockwise
         }
